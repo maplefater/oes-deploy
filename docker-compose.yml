@@ -1,0 +1,29 @@
+version: "3"
+services:
+
+  oes-postgres:
+    image: registry.docker-cn.com/library/postgres:10-alpine
+    container_name: oes-postgres
+    restart: always
+    volumes:
+      - $PWD/data/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=OES_DB
+      - POSTGRES_USER=oes_db_user
+      - POSTGRES_PASSWORD=oes_db_pass
+
+
+  oes-server:
+    image: registry.cn-hangzhou.aliyuncs.com/maplefater/oes
+    container_name: oes-server
+    depends_on:
+      - oes-postgres
+    volumes:
+      - $PWD/data/backend:/data
+    environment:
+      - POSTGRES_DB=OES_DB
+      - POSTGRES_USER=oes_db_user
+      - POSTGRES_PASSWORD=oes_db_pass
+    ports:
+      - "0.0.0.0:80:8000"
+      - "0.0.0.0:443:1443"
