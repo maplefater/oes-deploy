@@ -34,3 +34,9 @@ docker-compose up -d
 通过浏览器访问服务器的 HTTP 80 端口或者 HTTPS 443 端口，就可以开始使用了。后台管理路径为`/admin`, 安装过程中自动添加的超级管理员用户名为`root`，密码为`rootroot`， **请务必及时修改密码**。
 
 感谢 [青岛大学OJ](https://github.com/QingdaoU/OnlineJudge) 对我们的帮助
+
+## 升级说明
+```bash
+git pull
+docker-compose pull && docker-compose up -d
+```
