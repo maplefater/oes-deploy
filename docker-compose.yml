@@ -62,7 +62,7 @@ services:
       - /judger_run:exec,mode=777
       - /spj:exec,mode=777
     volumes:
-      - $PWD/data/backend/test_case:/test_case:ro
+      - $PWD/data/oj-backend/test_case:/test_case:ro
       - $PWD/data/judge_server:/log
     environment:
       - SERVICE_URL=http://judge-server:8080
