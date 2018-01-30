@@ -47,7 +47,7 @@ services:
       - POSTGRES_PASSWORD=onlinejudge
 
   judge-server:
-    image: registry.cn-hangzhou.aliyuncs.com/onlinejudge/judge_server
+    image: registry.cn-hangzhou.aliyuncs.com/maplefater/judge_server
     container_name: judge-server
     read_only: true
     cap_drop:
@@ -70,7 +70,7 @@ services:
       - TOKEN=HelloWorld123
 
   oj-backend:
-    image: registry.cn-hangzhou.aliyuncs.com/onlinejudge/oj_backend
+    image: 	registry.cn-hangzhou.aliyuncs.com/maplefater/oj_backend
     container_name: oj-backend
     depends_on:
       - oj-redis
