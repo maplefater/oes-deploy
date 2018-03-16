@@ -24,6 +24,7 @@ services:
       - POSTGRES_DB=OES_DB
       - POSTGRES_USER=oes_db_user
       - POSTGRES_PASSWORD=oes_db_pass
+      - OJ_URL=http://58.246.138.230:5001/
     ports:
       - "0.0.0.0:80:8000"
       - "0.0.0.0:443:1443"
